@@ -1,0 +1,51 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><title> https 的安全问题 · snow</title><meta name="description" content="https 的安全问题 - leeleo"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="icon" href="/notebook/favicon.png"><link rel="stylesheet" href="/notebook/css/apollo.css"><link rel="search" type="application/opensearchdescription+xml" href="http://leeleoo.github.io/notebook/atom.xml" title="snow"></head><body><div class="wrap"><header><a href="/notebook/" class="logo-link"><img src="/notebook/favicon.png" alt="logo"></a><ul class="nav nav-list"><li class="nav-list-item"><a href="/notebook/" target="_self" class="nav-list-link">BLOG</a></li><li class="nav-list-item"><a href="/notebook/archives/" target="_self" class="nav-list-link">ARCHIVE</a></li><li class="nav-list-item"><a href="http://weibo.com/sunchongsheng" target="_blank" class="nav-list-link">WEIBO</a></li><li class="nav-list-item"><a href="https://github.com/pinggod" target="_blank" class="nav-list-link">GITHUB</a></li><li class="nav-list-item"><a href="/notebook/atom.xml" target="_self" class="nav-list-link">RSS</a></li></ul></header><main class="container"><div class="post"><article class="post-block"><h1 class="post-title">https 的安全问题</h1><div class="post-info">Sep 19, 2017</div><div class="post-content"><h2 id="中间人攻击"><a href="#中间人攻击" class="headerlink" title="中间人攻击"></a>中间人攻击</h2><p>你和服务器的连接会经过一个中间人，你以为你和服务器在正常地传输入数据，其实这些数据都先经过了一个中间人，这个中间人可以窥探你的数据或者篡改你的数据后再发给服务器，相反也可以把服务器的数据修改了之后再发给你。而这个中间人对你是透明的，你不知道你的数据已经被人窃取或者修改了。</p>
+<blockquote>
+<p> 与服务器交互的数据被劫持</p>
+</blockquote>
+<h2 id="中间人攻击方式"><a href="#中间人攻击方式" class="headerlink" title="中间人攻击方式"></a>中间人攻击方式</h2><ol>
+<li><p>域名污染</p>
+<ul>
+<li>由于我们访问一个域名时需要先进行域名解析，即向DNS服务器请求某个域名的IP地址。在经过DNS的中间链点可能会抢答，返回给你一个错误的IP地址，这个IP地址就指向中间人的机器。</li>
+</ul>
+</li>
+<li><p>APR欺骗</p>
+<ul>
+<li>如果路由器的 ARP 广播被同局域网的抢答, 那么实际发给你的数据包就会流向抢答机</li>
+</ul>
+</li>
+</ol>
+<h2 id="https连接的过程"><a href="#https连接的过程" class="headerlink" title="https连接的过程"></a>https连接的过程</h2><ol>
+<li><p>client hello</p>
+<p> （1） 支持的协议版本，比如TLS 1.0版。</p>
+<p> （2） 一个客户端生成的随机数，稍后用于生成”对话密钥”。</p>
+<p> （3） 支持的加密方法，比如RSA公钥加密。</p>
+<p> （4） 支持的压缩方法。</p>
+</li>
+<li><p>server hello</p>
+</li>
+<li><p>Certificate证书</p>
+<ul>
+<li>服务器总共发来三个证书, 分别是加密证书, 签名证书, 和根证书</li>
+<li>每个证书包含签名, 签名的算法，和被签名的证书tbsCertificate(to be signed Certificate)<ul>
+<li>证书又包含<ol>
+<li>申请证书时所填写的国家、省份、城市、组织名称</li>
+<li>证书支持的域名</li>
+<li>证书的有效期</li>
+<li>证书的公钥</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>RSA加密和解密</p>
+</li>
+<li><p>密钥交换Key Exchange</p>
+</li>
+</ol>
+<blockquote>
+<p>ps:  降级攻击无法避免(人工避免)</p>
+</blockquote>
+<p><a href="https://mp.weixin.qq.com/s?__biz=MzI0ODA2ODU2NQ==&amp;mid=2651131741&amp;idx=1&amp;sn=8d3d5b67bf7edbcd50e8a5308dc1fbe9&amp;chksm=f257cfe7c52046f16decde9e1893b45a6eac14ea3e3a55270ec56764cb78ed4688304936e766&amp;scene=21#wechat_redirect" target="_blank" rel="external">参考资料 野狗</a></p>
+<p><a href="http://www.ruanyifeng.com/blog/2014/02/ssl_tls.html" target="_blank" rel="external">参考资料 阮一峰</a></p>
+</div></article></div></main><footer><div class="paginator"><a href="/notebook/2017/09/19/在用-react-和-flex-实现瀑布流时踩的坑/" class="next">下一篇</a></div><div class="copyright"><p>© 2015 - 2017 <a href="http://leeleoo.github.io/notebook">leeleo</a>, powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/pinggod/hexo-theme-apollo" target="_blank">hexo-theme-apollo</a>.</p></div></footer></div><script async src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" integrity="sha384-crwIf/BuaWM9rM65iM+dWFldgQ1Un8jWZMuh3puxb8TOY9+linwLoI7ZHZT+aekW" crossorigin="anonymous"></script><script>(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;e=o.createElement(i);r=o.getElementsByTagName(i)[0];e.src='//www.google-analytics.com/analytics.js';r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));ga('create',"UA-65933410-1",'auto');ga('send','pageview');</script></body></html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><title> 想用history搞事吗 · snow</title><meta name="description" content="想用history搞事吗 - leeleo"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="icon" href="/notebook/favicon.png"><link rel="stylesheet" href="/notebook/css/apollo.css"><link rel="search" type="application/opensearchdescription+xml" href="http://leeleoo.github.io/notebook/atom.xml" title="snow"></head><body><div class="wrap"><header><a href="/notebook/" class="logo-link"><img src="/notebook/favicon.png" alt="logo"></a><ul class="nav nav-list"><li class="nav-list-item"><a href="/notebook/" target="_self" class="nav-list-link">BLOG</a></li><li class="nav-list-item"><a href="/notebook/archives/" target="_self" class="nav-list-link">ARCHIVE</a></li><li class="nav-list-item"><a href="http://weibo.com/sunchongsheng" target="_blank" class="nav-list-link">WEIBO</a></li><li class="nav-list-item"><a href="https://github.com/pinggod" target="_blank" class="nav-list-link">GITHUB</a></li><li class="nav-list-item"><a href="/notebook/atom.xml" target="_self" class="nav-list-link">RSS</a></li></ul></header><main class="container"><div class="post"><article class="post-block"><h1 class="post-title">想用history搞事吗</h1><div class="post-info">Nov 1, 2016</div><div class="post-content"><h1 id="速记"><a href="#速记" class="headerlink" title="速记"></a>速记</h1><h2 id="两个函数"><a href="#两个函数" class="headerlink" title="两个函数"></a>两个函数</h2><blockquote>
+<p>以下两个函数唯一不同点replaceState不会在 history 中加入新的记录</p>
+</blockquote>
+<ol>
+<li><p>history.pushState</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">history.pushState(&#123;&#125;,title,url)</div></pre></td></tr></table></figure>
+</li>
+<li><p>history.replaceState</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">history.replaceState(&#123;&#125;,title,url)</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p><em>以上方法不会触发onhashchange</em><br><a id="more"></a></p>
+<h2 id="几个事件"><a href="#几个事件" class="headerlink" title="几个事件"></a>几个事件</h2><h3 id="window-onhashchange"><a href="#window-onhashchange" class="headerlink" title="window.onhashchange"></a>window.onhashchange</h3><blockquote>
+<p>如何触发?</p>
+</blockquote>
+<ol>
+<li>直接更改浏览器地址，在最后面增加或改变#hash；</li>
+<li>通过改变location.href或location.hash的值；</li>
+<li>通过触发点击带锚点的链接；</li>
+<li>浏览器前进后退可能导致hash的变化，前提是两个网页地址中的hash值不同。</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">window</span>.onhashchange = <span class="function"><span class="keyword">function</span>(<span class="params">event</span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(event.oldURL);</div><div class="line">    <span class="built_in">console</span>.log(event.newURL);</div><div class="line">    <span class="built_in">console</span>.log(location.hash);</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<h3 id="window-onpopstate"><a href="#window-onpopstate" class="headerlink" title="window.onpopstate"></a>window.onpopstate</h3><p><em>使用这个事件有以下几点要注意</em></p>
+<ol>
+<li>这个事件是唯一可以访问到之前改变 State 的函数中第一个参数的方法</li>
+<li>这个事件触发的时机</li>
+<li>事件作用范围仅在于一个document里面</li>
+<li><code>history.pushState</code>会增加历史记录的条目，但是不会触发<code>hashchange</code>和<code>popstate</code>;<code>hashchange</code>也可以增加历史记录的条目，但是它却可以触发popstate。</li>
+</ol>
+<ul>
+<li><p>history.pushState和history.replaceState都不会触发这个事件</p>
+</li>
+<li><p>仅在浏览器前进后退操作、history.go/back/forward调用、hashchange的时候触发</p>
+</li>
+</ul>
+<p>参考:<a href="www.cnblogs.com/lyzg/p/5960609.html">流云诸葛</a></p>
+</div></article></div></main><footer><div class="paginator"><a href="/notebook/2016/11/16/移动端的坑/" class="prev">上一篇</a><a href="/notebook/2016/10/18/react技术栈/" class="next">下一篇</a></div><div class="copyright"><p>© 2015 - 2017 <a href="http://leeleoo.github.io/notebook">leeleo</a>, powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/pinggod/hexo-theme-apollo" target="_blank">hexo-theme-apollo</a>.</p></div></footer></div><script async src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" integrity="sha384-crwIf/BuaWM9rM65iM+dWFldgQ1Un8jWZMuh3puxb8TOY9+linwLoI7ZHZT+aekW" crossorigin="anonymous"></script><script>(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;e=o.createElement(i);r=o.getElementsByTagName(i)[0];e.src='//www.google-analytics.com/analytics.js';r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));ga('create',"UA-65933410-1",'auto');ga('send','pageview');</script></body></html>
