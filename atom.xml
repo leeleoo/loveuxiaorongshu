@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>snow</title>
+  
+  
+  <link href="/notebook/atom.xml" rel="self"/>
+  
+  <link href="http://leeleoo.github.io/notebook/"/>
+  <updated>2017-09-19T02:32:38.000Z</updated>
+  <id>http://leeleoo.github.io/notebook/</id>
+  
+  <author>
+    <name>leeleo</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title></title>
+    <link href="http://leeleoo.github.io/notebook/2017/09/19/reg/"/>
+    <id>http://leeleoo.github.io/notebook/2017/09/19/reg/</id>
+    <published>2017-09-19T02:32:38.000Z</published>
+    <updated>2017-09-19T02:32:38.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>一、校验数字的表达式</p><p>数字：<code>^[0-9]*$</code></p><p>n位的数字：<code>^\d{n}$</code></p><p>至少n位的数字：<code>^\d{n,}$</code></p><p>m-n位的数字：<code>^\d{m,n}$</code></p><p>零和非零开头的数字：<code>^(0|[1-9][0-9]*)$</code></p><p>非零开头的最多带两位小数的数字：<code>^([1-9][0-9]*)+(.[0-9]{1,2})?$</code></p><p>带1-2位小数的正数或负数：<code>^(\-)?\d+(\.\d{1,2})?$</code></p><p>正数、负数、和小数：<code>^(\-|\+)?\d+(\.\d+)?$</code></p><p>有两位小数的正实数：<code>^[0-9]+(.[0-9]{2})?$</code></p><p>有1~3位小数的正实数：<code>^[0-9]+(.[0-9]{1,3})?$</code></p><p>非零的正整数：<code>^[1-9]\d*$ 或 ^([1-9][0-9]*){1,3}$ 或 ^\+?[1-9][0-9]*$</code></p><p>非零的负整数：<code>^\-[1-9][]0-9″*$ 或 ^-[1-9]\d*$</code></p><p>非负整数：<code>^\d+$ 或 ^[1-9]\d*|0$</code></p><p>非正整数：<code>^-[1-9]\d*|0$ 或 ^((-\d+)|(0+))$</code></p><p>非负浮点数：<code>^\d+(\.\d+)?$ 或 ^[1-9]\d*\.\d*|0\.\d*[1-9]\d*|0?\.0+|0$</code></p><p>非正浮点数：<code>^((-\d+(\.\d+)?)|(0+(\.0+)?))$ 或 ^(-([1-9]\d*\.\d*|0\.\d*[1-9]\d*))|0?\.0+|0$</code></p><p>正浮点数：<code>^[1-9]\d*\.\d*|0\.\d*[1-9]\d*$ 或 ^(([0-9]+\.[0-9]*[1-9][0-9]*)|([0-9]*[1-9][0-9]*\.[0-9]+)|([0-9]*[1-9][0-9]*))$</code></p><p>负浮点数：<code>^-([1-9]\d*\.\d*|0\.\d*[1-9]\d*)$ 或 ^(-(([0-9]+\.[0-9]*[1-9][0-9]*)|([0-9]*[1-9][0-9]*\.[0-9]+)|([0-9]*[1-9][0-9]*)))$</code></p><p>浮点数：<code>^(-?\d+)(\.\d+)?$ 或 ^-?([1-9]\d*\.\d*|0\.\d*[1-9]\d*|0?\.0+|0)$</code></p><p>二、校验字符的表达式</p><p>汉字：<code>^[\u4e00-\u9fa5]{0,}$</code></p><p>英文和数字：<code>^[A-Za-z0-9]+$ 或 ^[A-Za-z0-9]{4,40}$</code></p><p>长度为3-20的所有字符：<code>^.{3,20}$</code></p><p>由26个英文字母组成的字符串：<code>^[A-Za-z]+$</code></p><p>由26个大写英文字母组成的字符串：<code>^[A-Z]+$</code></p><p>由26个小写英文字母组成的字符串：<code>^[a-z]+$</code></p><p>由数字和26个英文字母组成的字符串：<code>^[A-Za-z0-9]+$</code></p><p>由数字、26个英文字母或者下划线组成的字符串：<code>^\w+$ 或 ^\w{3,20}$</code></p><p>中文、英文、数字包括下划线：<code>^[\u4E00-\u9FA5A-Za-z0-9_]+$</code></p><p>中文、英文、数字但不包括下划线等符号：<code>^[\u4E00-\u9FA5A-Za-z0-9]+$ 或 ^[\u4E00-\u9FA5A-Za-z0-9]{2,20}$</code></p><p>可以输入含有^%&amp;’,;=?$\”等字符：<code>[^%&amp;&#39;,;=?$\x22]+</code></p><p>禁止输入含有~的字符：<code>[^~\x22]+</code></p><p>三、特殊需求表达式</p><p>Email地址：<code>^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$</code></p><p>域名：<code>[a-zA-Z0-9][-a-zA-Z0-9]{0,62}(/.[a-zA-Z0-9][-a-zA-Z0-9]{0,62})+/.?</code></p><p>InternetURL：<code>[a-zA-z]+://[^\s]* 或 ^http://([\w-]+\.)+[\w-]+(/[\w-./?%&amp;=]*)?$</code></p><p>手机号码：<code>^(13[0-9]|14[5|7]|15[0|1|2|3|5|6|7|8|9]|18[0|1|2|3|5|6|7|8|9])\d{8}$</code></p><p>电话号码(“XXX-XXXXXXX”、”XXXX-XXXXXXXX”、”XXX-XXXXXXX”、”XXX-XXXXXXXX”、”XXXXXXX”和”XXXXXXXX)：<code>^($$\d{3,4}-)|\d{3.4}-)?\d{7,8}$</code></p><p>国内电话号码(0511-4405222、021-87888822)：<code>\d{3}-\d{8}|\d{4}-\d{7}</code></p><p>身份证号(15位、18位数字)：<code>^\d{15}|\d{18}$</code></p><p>短身份证号码(数字、字母x结尾)：<code>^([0-9]){7,18}(x|X)?$ 或 ^\d{8,18}|[0-9x]{8,18}|[0-9X]{8,18}?$</code></p><p>帐号是否合法(字母开头，允许5-16字节，允许字母数字下划线)：<code>^[a-zA-Z][a-zA-Z0-9_]{4,15}$</code></p><p>密码(以字母开头，长度在6~18之间，只能包含字母、数字和下划线)：<code>^[a-zA-Z]\w{5,17}$</code><br>强密码(必须包含大小写字母和数字的组合，不能使用特殊字符，长度在8-10之间)：<code>^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,10}$</code><br>日期格式：<code>^\d{4}-\d{1,2}-\d{1,2}</code><br>一年的12个月(01～09和1～12)：<code>^(0?[1-9]|1[0-2])$</code><br>一个月的31天(01～09和1～31)：<code>^((0?[1-9])|((1|2)[0-9])|30|31)$</code><br>钱的输入格式：<br>有四种钱的表示形式我们可以接受:”10000.00″ 和 “10,000.00″, 和没有 “分” 的 “10000″ 和 “10,000″：^[1-9][0-9]*$</p><p>这表示任意一个不以0开头的数字，但是，这也意味着一个字符”0″不通过，所以我们采用下面的形式：^(0|[1-9][0-9]*)$</p><p>一个0或者一个不以0开头的数字.我们还可以允许开头有一个负号：^(0|-?[1-9][0-9]*)$</p><p>这表示一个0或者一个可能为负的开头不为0的数字.让用户以0开头好了.把负号的也去掉，因为钱总不能是负的吧.下面我们要加的是说明可能的小数部分：^[0-9]+(.[0-9]+)?$</p><p>必须说明的是，小数点后面至少应该有1位数，所以”10.”是不通过的，但是 “10″ 和 “10.2″ 是通过的：^[0-9]+(.[0-9]{2})?$</p><p>这样我们规定小数点后面必须有两位，如果你认为太苛刻了，可以这样：^[0-9]+(.[0-9]{1,2})?$</p><p>这样就允许用户只写一位小数。下面我们该考虑数字中的逗号了，我们可以这样：^[0-9]{1,3}(,[0-9]{3})*(.[0-9]{1,2})?$</p><p>1到3个数字，后面跟着任意个 逗号+3个数字，逗号成为可选，而不是必须：^([0-9]+|[0-9]{1,3}(,[0-9]{3})*)(.[0-9]{1,2})?$</p><p>备注：这就是最终结果了，别忘了”+”可以用”*”替代。如果你觉得空字符串也可以接受的话(奇怪，为什么?)最后，别忘了在用函数时去掉去掉那个反斜杠，一般的错误都在这里</p><p>xml文件：<code>^([a-zA-Z]+-?)+[a-zA-Z0-9]+\\.[x|X][m|M][l|L]$</code></p><p>中文字符的正则表达式：<code>[\u4e00-\u9fa5]</code></p><p>双字节字符：<code>[^\x00-\xff]</code> (包括汉字在内，可以用来计算字符串的长度(一个双字节字符长度计2，ASCII字符计1))</p><p>空白行的正则表达式：<code>\n\s*\r (可以用来删除空白行)</code></p><p>HTML标记的正则表达式：<code>&lt;(\S*?)[^&gt;]*&gt;.*?&lt;/\1&gt;|&lt;.*? /&gt;</code> (网上流传的版本太糟糕，上面这个也仅仅能部分，对于复杂的嵌套标记依旧无能为力)</p><p>首尾空白字符的正则表达式：<code>^\s*|\s*$或(^\s*)|(\s*$)</code> (可以用来删除行首行尾的空白字符(包括空格、制表符、换页符等等)，非常有用的表达式)</p><p>腾讯QQ号：<code>[1-9][0-9]{4,} (腾讯QQ号从10000开始)</code></p><p>中国邮政编码：<code>[1-9]\d{5}(?!\d) (中国邮政编码为6位数字)</code></p><p>IP地址：<code>\d+\.\d+\.\d+\.\d+ (提取IP地址时有用)</code></p><p>IP地址：<code>((?:(?:25[0-5]|2[0-4]\\d|[01]?\\d?\\d)\\.){3}(?:25[0-5]|2[0-4]\\d|[01]?\\d?\\d)) (由@飞龙三少 提供，感谢共享)</code></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;一、校验数字的表达式&lt;/p&gt;
+&lt;p&gt;数字：&lt;code&gt;^[0-9]*$&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;n位的数字：&lt;code&gt;^\d{n}$&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;至少n位的数字：&lt;code&gt;^\d{n,}$&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;m-n位的数字：&lt;code&gt;^\
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>web 中各种数据的转换</title>
+    <link href="http://leeleoo.github.io/notebook/2017/02/18/web-%E4%B8%AD%E5%90%84%E7%A7%8D%E6%95%B0%E6%8D%AE%E7%9A%84%E8%BD%AC%E6%8D%A2/"/>
+    <id>http://leeleoo.github.io/notebook/2017/02/18/web-中各种数据的转换/</id>
+    <published>2017-02-18T08:42:29.000Z</published>
+    <updated>2017-09-19T02:32:38.000Z</updated>
+    
+    <content type="html"><![CDATA[<p><a href="http://blog.csdn.net/cuixiping/article/details/45932793" target="_blank" rel="external">http://blog.csdn.net/cuixiping/article/details/45932793</a><br>canvas转换为dataURL (从canvas获取dataURL)</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var dataurl = canvas.toDataURL(&apos;image/png&apos;);</div><div class="line">var dataurl2 = canvas.toDataURL(&apos;image/jpeg&apos;, 0.8);</div></pre></td></tr></table></figure><p>File对象转换为dataURL、Blob对象转换为dataURL<br>File对象也是一个Blob对象，二者的处理相同。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">function readBlobAsDataURL(blob, callback) &#123;</div><div class="line">   var a = new FileReader(); </div><div class="line">   a.onload = function(e) &#123;callback(e.target.result);&#125;;             </div><div class="line">   a.readAsDataURL(blob);</div><div class="line">&#125;</div><div class="line">//example:</div><div class="line">readBlobAsDataURL(blob, function (dataurl)&#123; </div><div class="line">          console.log(dataurl);</div><div class="line">&#125;);</div><div class="line">readBlobAsDataURL(file, function (dataurl)&#123; </div><div class="line">          console.log(dataurl);</div><div class="line">&#125;);</div></pre></td></tr></table></figure><p>dataURL转换为Blob对象<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">function dataURLtoBlob(dataurl) &#123; </div><div class="line">  var arr = dataurl.split(&apos;,&apos;), mime = arr[0].match(/:(.*?);/)[1], bstr = atob(arr[1]), n = bstr.length, u8arr = new Uint8Array(n); </div><div class="line">  while(n--)&#123; u8arr[n] = bstr.charCodeAt(n); &#125; return new Blob([u8arr], &#123;type:mime&#125;);</div><div class="line">&#125;</div><div class="line">//test:var blob = dataURLtoBlob(&apos;data:text/plain;base64,YWFhYWFhYQ==&apos;);</div></pre></td></tr></table></figure></p><p>dataURL图片数据绘制到canvas<br>先构造Image对象，src为dataURL，图片onload之后绘制到canvas<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var img = new Image();</div><div class="line">img.onload = function()&#123; canvas.drawImage(img);&#125;;</div><div class="line">img.src = dataurl;</div></pre></td></tr></table></figure></p><p>File,Blob的图片文件数据绘制到canvas<br>还是先转换成一个url，然后构造Image对象，src为dataURL，图片onload之后绘制到canvas<br>利用上面的 readBlobAsDataURL 函数，由File,Blob对象得到dataURL格式的url，再参考 <strong>dataURL图片数据绘制到canvas</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">readBlobAsDataURL(file, function (dataurl)&#123; </div><div class="line">    var img = new Image(); </div><div class="line">    img.onload = function()&#123; </div><div class="line">      canvas.drawImage(img); </div><div class="line">    &#125;; </div><div class="line">    img.src = dataurl;&#125;);</div></pre></td></tr></table></figure></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;a href=&quot;http://blog.csdn.net/cuixiping/article/details/45932793&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://blog.csdn.net/cuixiping/article/d
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>web缓存</title>
+    <link href="http://leeleoo.github.io/notebook/2016/12/24/web%E7%BC%93%E5%AD%98/"/>
+    <id>http://leeleoo.github.io/notebook/2016/12/24/web缓存/</id>
+    <published>2016-12-24T03:20:21.000Z</published>
+    <updated>2017-09-19T02:32:38.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>三个关键字 <code>cache-control</code> ,<code>Expire</code>, <code>ETag</code> </p><a id="more"></a><ol><li><p>Expire与cache-control有一样的效果.他们都会设置一个过期时间,在这个时间内浏览器会从本地(disk, momery)直接读取而不发出http请求</p></li><li><p>ETag 与 他们的区别在于:<br>当缓存到期时,  浏览器会发出一个http请求并带上Etag与服务器相对应的资源做比较,相同则返回304 继续读取本地缓存,不同则拉取新的资源200</p></li></ol><p><em>通常在线上的情况,根据业务需求设置一个合理的缓存时间对用户的体验有极大的提高,因为连请求都不用发送了</em></p><p>然鹅,对于缓存的控制还有很多细节<a href="http://www.cnblogs.com/skynet/archive/2012/11/28/2792503.html" target="_blank" rel="external">参考资料</a></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;三个关键字 &lt;code&gt;cache-control&lt;/code&gt; ,&lt;code&gt;Expire&lt;/code&gt;, &lt;code&gt;ETag&lt;/code&gt; &lt;/p&gt;
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>css3旋转</title>
+    <link href="http://leeleoo.github.io/notebook/2016/12/19/css3%E6%97%8B%E8%BD%AC/"/>
+    <id>http://leeleoo.github.io/notebook/2016/12/19/css3旋转/</id>
+    <published>2016-12-19T05:19:13.000Z</published>
+    <updated>2017-09-19T02:32:38.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>先记下以后再说<br>主要说一下transform-origin为什么是100%<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.container</span>&#123;</div><div class="line">  <span class="attribute">display</span>: none;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.loading</span>&#123;</div><div class="line">  <span class="attribute">background</span>: <span class="number">#EDEFF1</span>;</div><div class="line">  <span class="attribute">height</span>: <span class="number">100%</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.loading</span> <span class="selector-tag">img</span>&#123;</div><div class="line">  <span class="attribute">position</span>: absolute;</div><div class="line">  <span class="attribute">right</span>: <span class="number">50%</span>;</div><div class="line">  <span class="attribute">bottom</span>:<span class="number">50%</span>;</div><div class="line">  <span class="attribute">animation</span>: change .<span class="number">8s</span> linear infinite;</div><div class="line">  <span class="attribute">-webkit-animation</span>: change .<span class="number">8s</span> linear infinite;</div><div class="line">  <span class="attribute">transform-origin</span>: <span class="number">100%</span> <span class="number">100%</span>;</div><div class="line">  <span class="attribute">-webkit-transform-origin</span>: <span class="number">100%</span> <span class="number">100%</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line">@-<span class="keyword">webkit</span>-<span class="keyword">keyframes</span> change &#123;</div><div class="line">  <span class="selector-tag">from</span>&#123;</div><div class="line">    <span class="attribute">transform</span>: <span class="built_in">rotate</span>(0deg) <span class="built_in">translate</span>(50%,50%);</div><div class="line">    <span class="attribute">-webkit-transform</span>: <span class="built_in">rotate</span>(0deg) <span class="built_in">translate</span>(50%,50%);</div><div class="line">  &#125;</div><div class="line">  <span class="selector-tag">to</span>&#123;</div><div class="line">    <span class="attribute">transform</span>: <span class="built_in">rotate</span>(360deg) <span class="built_in">translate</span>(50%,50%);</div><div class="line">    <span class="attribute">-webkit-transform</span>: <span class="built_in">rotate</span>(360deg) <span class="built_in">translate</span>(50%,50%);</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;先记下以后再说&lt;br&gt;主要说一下transform-origin为什么是100%&lt;br&gt;&lt;figure class=&quot;highlight css&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;di
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>横屏?竖屏?</title>
+    <link href="http://leeleoo.github.io/notebook/2016/12/13/%E6%A8%AA%E5%B1%8F-%E7%AB%96%E5%B1%8F/"/>
+    <id>http://leeleoo.github.io/notebook/2016/12/13/横屏-竖屏/</id>
+    <published>2016-12-13T05:23:43.000Z</published>
+    <updated>2017-09-19T02:32:38.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>女产品布置了一个任务, 要锁定横,竖屏,不让用户自己切换</p><p><strong>首先要进入全屏模式</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">document</span>.documentElement.webkitRequestFullScreen();</div></pre></td></tr></table></figure></p><p><strong>然后根据需求改变旋转角度</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">screen.orientation.lock(<span class="string">"portrait-primary"</span>);</div></pre></td></tr></table></figure></p><blockquote><p>可以通过screen.orientation对象看到当前的方向</p><ul><li>0°     等同 portrait-primary；</li><li>90°   等同 landscape-primary；</li><li>180° 等同 portrait-secondary；</li><li>270° 等同 landscape-secondary;</li></ul></blockquote><p>而且你还可以添加事件<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">screen.orientation.addEventListener(<span class="string">"change"</span>, <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</div><div class="line">  alert(screen.orientation.type + <span class="string">" "</span> + screen.orientation.angle);</div><div class="line">&#125;, <span class="literal">false</span>);</div></pre></td></tr></table></figure></p><p><a href="http://caniuse.com/#search=full" target="_blank" rel="external">兼容性</a>不是太好IOS全军覆没</p><p>但是你可以使用<br>css3<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">@media (orientation: (portrait  | landscape))&#123;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;女产品布置了一个任务, 要锁定横,竖屏,不让用户自己切换&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;首先要进入全屏模式&lt;/strong&gt;&lt;br&gt;&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>aoaoRN项目记录</title>
+    <link href="http://leeleoo.github.io/notebook/2016/12/07/aoaoRN%E9%A1%B9%E7%9B%AE%E8%AE%B0%E5%BD%95/"/>
+    <id>http://leeleoo.github.io/notebook/2016/12/07/aoaoRN项目记录/</id>
+    <published>2016-12-07T14:37:36.000Z</published>
+    <updated>2017-09-19T02:32:38.000Z</updated>
+    
+    <content type="html"><![CDATA[<ol><li><p>使用ant-mobile <code>DONE</code></p></li><li><p>使用code-push ?</p></li><li><p>使用react-intl ?</p></li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;ol&gt;
+&lt;li&gt;&lt;p&gt;使用ant-mobile &lt;code&gt;DONE&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;使用code-push ?&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;使用react-intl ?&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>现代浏览器的差异</title>
+    <link href="http://leeleoo.github.io/notebook/2016/12/07/%E7%8E%B0%E4%BB%A3%E6%B5%8F%E8%A7%88%E5%99%A8%E7%9A%84%E5%B7%AE%E5%BC%82/"/>
+    <id>http://leeleoo.github.io/notebook/2016/12/07/现代浏览器的差异/</id>
+    <published>2016-12-06T16:10:43.000Z</published>
+    <updated>2017-09-19T02:32:38.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>鼠标滚轮事件的浏览器差异</p><p>通用<code>mousewheel</code></p><p>火狐<code>DOMMouseScroll</code></p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">$el.on(<span class="string">'mousewheel DOMMouseScroll'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;</div><div class="line"><span class="comment">//火狐的滑动事件方向也是与其他浏览器相反的</span></div><div class="line"><span class="keyword">var</span> delta = e.originalEvent.wheelDelta || -e.originalEvent.detail</div><div class="line"><span class="keyword">if</span>(delta &gt; <span class="number">0</span>)&#123;</div><div class="line"><span class="comment">//向上</span></div><div class="line">&#125;<span class="keyword">else</span>&#123;</div><div class="line"><span class="comment">//向下</span></div><div class="line">&#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;鼠标滚轮事件的浏览器差异&lt;/p&gt;
+&lt;p&gt;通用&lt;code&gt;mousewheel&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;火狐&lt;code&gt;DOMMouseScroll&lt;/code&gt;&lt;/p&gt;
+&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;t
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>react-native组件收藏</title>
+    <link href="http://leeleoo.github.io/notebook/2016/11/25/react-native%E7%BB%84%E4%BB%B6%E6%94%B6%E8%97%8F/"/>
+    <id>http://leeleoo.github.io/notebook/2016/11/25/react-native组件收藏/</id>
+    <published>2016-11-24T16:51:04.000Z</published>
+    <updated>2017-09-19T02:32:38.000Z</updated>
+    
+    <content type="html"><![CDATA[<ol><li><a href="https://github.com/skv-headless/react-native-scrollable-tab-view" target="_blank" rel="external">react-native-scrollable-tab-view</a></li><li><a href="https://github.com/umhan35/react-native-search-bar" target="_blank" rel="external">react-native-search-bar</a></li><li><a href="https://github.com/crazycodeboy/react-native-splash-screen" target="_blank" rel="external">解决启动白屏</a></li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;ol&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/skv-headless/react-native-scrollable-tab-view&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;react-native-scrollable-t
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>cocopods 把我坑</title>
+    <link href="http://leeleoo.github.io/notebook/2016/11/24/cocopods-%E6%8A%8A%E6%88%91%E5%9D%91/"/>
+    <id>http://leeleoo.github.io/notebook/2016/11/24/cocopods-把我坑/</id>
+    <published>2016-11-24T07:56:09.000Z</published>
+    <updated>2017-09-19T02:32:38.000Z</updated>
+    
+    <content type="html"><![CDATA[<ol><li>首先给 gem 换源 <a href="https://ruby.taobao.org/" target="_blank" rel="external">https://ruby.taobao.org/</a></li><li>然后安装<a href="http://code4app.com/article/cocoapods-install-usage" target="_blank" rel="external">cocoapods</a></li><li><a href="http://blog.csdn.net/wangyanchang21/article/details/51437934" target="_blank" rel="external">cocoapods常见错误总结</a></li></ol><blockquote><p>pod install 巨慢? clone 下面的仓库 <a href="http://git.oschina.net/c4605/Cocoapods-Specs" target="_blank" rel="external">http://git.oschina.net/c4605/Cocoapods-Specs</a></p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;ol&gt;
+&lt;li&gt;首先给 gem 换源 &lt;a href=&quot;https://ruby.taobao.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://ruby.taobao.org/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;然后安装&lt;a href=&quot;htt
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title> 移动端的坑</title>
+    <link href="http://leeleoo.github.io/notebook/2016/11/16/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E7%9A%84%E5%9D%91/"/>
+    <id>http://leeleoo.github.io/notebook/2016/11/16/移动端的坑/</id>
+    <published>2016-11-16T10:00:37.000Z</published>
+    <updated>2017-09-19T02:32:38.000Z</updated>
+    
+    <content type="html"><![CDATA[<h4 id="1-data-action-绑定事件请用-touchend"><a href="#1-data-action-绑定事件请用-touchend" class="headerlink" title="1. data-action 绑定事件请用 touchend"></a>1. data-action 绑定事件请用 touchend</h4><h4 id="2-请不要改变-data-action-的值-因为并没有卵用-改了一下午"><a href="#2-请不要改变-data-action-的值-因为并没有卵用-改了一下午" class="headerlink" title="2. 请不要改变 data-action 的值 因为并没有卵用(改了一下午)"></a>2. 请不要改变 data-action 的值 因为并没有卵用(改了一下午)</h4><h4 id="3-给-body-绑定-touchstart-可以激活-active"><a href="#3-给-body-绑定-touchstart-可以激活-active" class="headerlink" title="3. 给 body 绑定 touchstart 可以激活 :active"></a>3. 给 body 绑定 touchstart 可以激活 :active</h4>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h4 id=&quot;1-data-action-绑定事件请用-touchend&quot;&gt;&lt;a href=&quot;#1-data-action-绑定事件请用-touchend&quot; class=&quot;headerlink&quot; title=&quot;1. data-action 绑定事件请用 touchend&quot;&gt;&lt;/
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>想用history搞事吗</title>
+    <link href="http://leeleoo.github.io/notebook/2016/11/01/%E6%83%B3%E7%94%A8history%E6%90%9E%E4%BA%8B%E5%90%97/"/>
+    <id>http://leeleoo.github.io/notebook/2016/11/01/想用history搞事吗/</id>
+    <published>2016-11-01T02:48:24.000Z</published>
+    <updated>2017-09-19T02:32:38.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="速记"><a href="#速记" class="headerlink" title="速记"></a>速记</h1><h2 id="两个函数"><a href="#两个函数" class="headerlink" title="两个函数"></a>两个函数</h2><blockquote><p>以下两个函数唯一不同点replaceState不会在 history 中加入新的记录</p></blockquote><ol><li><p>history.pushState</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">history.pushState(&#123;&#125;,title,url)</div></pre></td></tr></table></figure></li><li><p>history.replaceState</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">history.replaceState(&#123;&#125;,title,url)</div></pre></td></tr></table></figure></li></ol><p><em>以上方法不会触发onhashchange</em><br><a id="more"></a></p><h2 id="几个事件"><a href="#几个事件" class="headerlink" title="几个事件"></a>几个事件</h2><h3 id="window-onhashchange"><a href="#window-onhashchange" class="headerlink" title="window.onhashchange"></a>window.onhashchange</h3><blockquote><p>如何触发?</p></blockquote><ol><li>直接更改浏览器地址，在最后面增加或改变#hash；</li><li>通过改变location.href或location.hash的值；</li><li>通过触发点击带锚点的链接；</li><li>浏览器前进后退可能导致hash的变化，前提是两个网页地址中的hash值不同。</li></ol><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">window</span>.onhashchange = <span class="function"><span class="keyword">function</span>(<span class="params">event</span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(event.oldURL);</div><div class="line">    <span class="built_in">console</span>.log(event.newURL);</div><div class="line">    <span class="built_in">console</span>.log(location.hash);</div><div class="line">&#125;;</div></pre></td></tr></table></figure><h3 id="window-onpopstate"><a href="#window-onpopstate" class="headerlink" title="window.onpopstate"></a>window.onpopstate</h3><p><em>使用这个事件有以下几点要注意</em></p><ol><li>这个事件是唯一可以访问到之前改变 State 的函数中第一个参数的方法</li><li>这个事件触发的时机</li><li>事件作用范围仅在于一个document里面</li><li><code>history.pushState</code>会增加历史记录的条目，但是不会触发<code>hashchange</code>和<code>popstate</code>;<code>hashchange</code>也可以增加历史记录的条目，但是它却可以触发popstate。</li></ol><ul><li><p>history.pushState和history.replaceState都不会触发这个事件</p></li><li><p>仅在浏览器前进后退操作、history.go/back/forward调用、hashchange的时候触发</p></li></ul><p>参考:<a href="www.cnblogs.com/lyzg/p/5960609.html">流云诸葛</a></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;速记&quot;&gt;&lt;a href=&quot;#速记&quot; class=&quot;headerlink&quot; title=&quot;速记&quot;&gt;&lt;/a&gt;速记&lt;/h1&gt;&lt;h2 id=&quot;两个函数&quot;&gt;&lt;a href=&quot;#两个函数&quot; class=&quot;headerlink&quot; title=&quot;两个函数&quot;&gt;&lt;/a&gt;两个函数&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;以下两个函数唯一不同点replaceState不会在 history 中加入新的记录&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;history.pushState&lt;/p&gt;
+&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;history.pushState(&amp;#123;&amp;#125;,title,url)&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;history.replaceState&lt;/p&gt;
+&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;history.replaceState(&amp;#123;&amp;#125;,title,url)&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;em&gt;以上方法不会触发onhashchange&lt;/em&gt;&lt;br&gt;
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>react技术栈</title>
+    <link href="http://leeleoo.github.io/notebook/2016/10/18/react%E6%8A%80%E6%9C%AF%E6%A0%88/"/>
+    <id>http://leeleoo.github.io/notebook/2016/10/18/react技术栈/</id>
+    <published>2016-10-18T03:55:46.000Z</published>
+    <updated>2017-09-19T02:32:38.000Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>WebRTC</title>
+    <link href="http://leeleoo.github.io/notebook/2016/10/18/WebRTC/"/>
+    <id>http://leeleoo.github.io/notebook/2016/10/18/WebRTC/</id>
+    <published>2016-10-18T03:55:05.000Z</published>
+    <updated>2017-09-19T02:32:38.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="1-获取用户媒体"><a href="#1-获取用户媒体" class="headerlink" title="1.获取用户媒体"></a>1.获取用户媒体</h2> <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">navigator.getUserMedia(</div><div class="line">  &#123; <span class="attr">video</span>: <span class="literal">true</span>, <span class="attr">audio</span>: <span class="literal">false</span> &#125;,</div><div class="line">  <span class="function"><span class="keyword">function</span> (<span class="params">myStream</span>) </span>&#123;</div><div class="line">    stream = myStream;</div><div class="line">    yourVideo.src = <span class="built_in">window</span>.URL.createObjectURL(stream);</div><div class="line">    <span class="keyword">if</span> (hasRTCPeerConnection()) &#123;</div><div class="line">   <span class="comment">//创建PeerConnection</span></div><div class="line">      setupPeerConnection(stream);</div><div class="line">    &#125; <span class="keyword">else</span> &#123;</div><div class="line">      alert(<span class="string">"Sorry, your browser does not support WebRTC."</span>);</div><div class="line">    &#125;</div><div class="line">  &#125;, </div><div class="line">  <span class="function"><span class="keyword">function</span> (<span class="params">error</span>) </span>&#123;</div><div class="line">      <span class="built_in">console</span>.log(error);</div><div class="line">  &#125;</div><div class="line">);</div></pre></td></tr></table></figure><a id="more"></a><h4 id="1-1创建RTCPeerConnectioninit"><a href="#1-1创建RTCPeerConnectioninit" class="headerlink" title="1.1创建RTCPeerConnectioninit"></a>1.1创建RTCPeerConnection<code>init</code></h4><blockquote><h4 id="这里主要做了四件事情"><a href="#这里主要做了四件事情" class="headerlink" title="这里主要做了四件事情"></a>这里主要做了四件事情</h4></blockquote><ol><li>创建RTCPeerConnection对象</li><li>给它添加媒体stream</li><li>给它添加onaddstream事件</li><li>给它添加onicecandidate事件</li></ol><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">setupPeerConnection</span>(<span class="params">stream</span>) </span>&#123;</div><div class="line">  <span class="keyword">var</span> configuration = &#123;</div><div class="line">    <span class="string">"iceServers"</span>: [&#123; <span class="string">"url"</span>: <span class="string">"stun:127.0.0.1:9876"</span> &#125;]</div><div class="line">  &#125;;</div><div class="line">  yourConnection = <span class="keyword">new</span> RTCPeerConnection(configuration);</div><div class="line"></div><div class="line">  <span class="comment">// Setup stream listening</span></div><div class="line">  yourConnection.addStream(stream);</div><div class="line">  yourConnection.onaddstream = <span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</div><div class="line">    theirVideo.src = <span class="built_in">window</span>.URL.createObjectURL(e.stream);</div><div class="line">  &#125;;</div><div class="line"></div><div class="line">  <span class="comment">// Setup ice handling</span></div><div class="line">  yourConnection.onicecandidate = <span class="function"><span class="keyword">function</span> (<span class="params">event</span>) </span>&#123;</div><div class="line">    <span class="keyword">if</span> (event.candidate) &#123;</div><div class="line">      send(&#123;</div><div class="line">        type: <span class="string">"candidate"</span>,</div><div class="line">        candidate: event.candidate</div><div class="line">      &#125;);</div><div class="line">    &#125;</div><div class="line">  &#125;;</div><div class="line">  </div><div class="line">&#125;</div></pre></td></tr></table></figure><h2 id="2-createOffercall"><a href="#2-createOffercall" class="headerlink" title="2.createOffercall"></a>2.createOffer<code>call</code></h2><blockquote><p>建立 SDP会话描述协议 offer 和 answer</p><p>创建之后发送给服务器<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">startPeerConnection</span>(<span class="params">user</span>) </span>&#123;</div><div class="line">  connectedUser = user;</div><div class="line"></div><div class="line">  <span class="comment">// Begin the offer</span></div><div class="line">  yourConnection.createOffer(<span class="function"><span class="keyword">function</span> (<span class="params">offer</span>) </span>&#123;</div><div class="line">    send(&#123;</div><div class="line">      type: <span class="string">"offer"</span>,</div><div class="line">      offer: offer</div><div class="line">    &#125;);</div><div class="line">    yourConnection.setLocalDescription(offer);</div><div class="line"></div><div class="line">  &#125;, <span class="function"><span class="keyword">function</span> (<span class="params">error</span>) </span>&#123;</div><div class="line">    alert(<span class="string">"An error has occurred."</span>);</div><div class="line">  &#125;);</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p></blockquote><h4 id="2-1-createAnswer-call"><a href="#2-1-createAnswer-call" class="headerlink" title="2.1 createAnswer call"></a>2.1 createAnswer <code>call</code></h4><blockquote><p>服务器收到offer之后反馈给客户端,客户端发送 answer<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">onOffer</span>(<span class="params">offer, name</span>) </span>&#123;</div><div class="line">  connectedUser = name;</div><div class="line"></div><div class="line">  yourConnection.setRemoteDescription(<span class="keyword">new</span> RTCSessionDescription(offer));</div><div class="line"></div><div class="line">  yourConnection.createAnswer(<span class="function"><span class="keyword">function</span> (<span class="params">answer</span>) </span>&#123;</div><div class="line">    yourConnection.setLocalDescription(answer);</div><div class="line">    send(&#123;</div><div class="line">      type: <span class="string">"answer"</span>,</div><div class="line">      answer: answer</div><div class="line">    &#125;);</div><div class="line">  &#125;, <span class="function"><span class="keyword">function</span> (<span class="params">error</span>) </span>&#123;</div><div class="line">    alert(<span class="string">"An error has occurred"</span>);</div><div class="line">  &#125;);</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p></blockquote><h4 id="2-2-响应-Answercall"><a href="#2-2-响应-Answercall" class="headerlink" title="2.2 响应 Answercall"></a>2.2 响应 Answer<code>call</code></h4><blockquote><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">onAnswer</span>(<span class="params">answer</span>) </span>&#123;</div><div class="line"></div><div class="line">  yourConnection.setRemoteDescription(<span class="keyword">new</span> RTCSessionDescription(answer));</div><div class="line">  </div><div class="line">&#125;;</div></pre></td></tr></table></figure></blockquote><h2 id="3-Question"><a href="#3-Question" class="headerlink" title="3.Question"></a>3.Question</h2><p>既然 webrtc 能实现点对点传输视频和音频, 那能不能 …..  能!</p><p>当然可以传点其他东西</p><h4 id="使用-DataChannel"><a href="#使用-DataChannel" class="headerlink" title="使用 DataChannel"></a>使用 DataChannel</h4><p>1.创建<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">yourConnection.createDataChannel(<span class="string">'name'</span>,options)</div></pre></td></tr></table></figure></p><p>第一个参数是卖萌的随便取一个就行了</p><p>这里的 options 可以搞下面的事情</p><hr><ul><li>reliable <code>设置消息传递是否进行担保(担保?黑人问号)</code></li><li>ordered <code>用来设置消息的接受是否需要按照发送时的顺序</code></li><li>maxRetransmitTime <code>设置消息发送失败时,多久重新发送</code></li><li>maxRetransmits <code>设置消息发送失败时,最多重发几次</code></li><li>protocol <code>设置强制使用其他子协议</code></li><li>negotiated <code>此选项用来设置开发人员是否有责任在两边创建数据通道,还是浏览器来自动完成这个步骤</code></li><li>id  <code>ID 本人亲测不设ID 根本连不上</code></li></ul><p>这里我只想说,我不是针对id, 我是说, 在座的options,都是辣鸡(开个小玩耍)<br><strong>说说我对这几个配置的感受</strong></p><ul><li>首先 ID 感觉是必填的. 这应该是链路层的地址,不然你知道传给谁?</li><li>然后有几个可配置的属性 <code>reliable</code> <code>ordered</code> <code>maxRetransmitTime</code> <code>maxRetransmits</code></li><li>最后两个值得注意的属性 <code>protocol</code> <code>negotiated</code> 并不知道有什么用(先挖坑,日后再填)</li></ul><hr><blockquote><p>negotiated<br>当此属性为 TRUE 时</p></blockquote><p>这里会有一个 ondatachannel 事件触发在 RTCPeerConnection 对象上本来由浏览器自动处理的数据通道现在必须由你来创建一个相同 ID 的数据通道</p><hr><p>DataChannel 非常容易使用这里有几个事件和几个方法</p><h4 id="事件"><a href="#事件" class="headerlink" title="事件"></a>事件</h4><ul><li>onerror</li><li>onmessage</li><li>onopen</li><li>onclose</li></ul><p>其中 onerror 和 onmessage 会传递一个参数供你使用</p><h4 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h4><ul><li>dataChannel.send</li></ul><p>意思已经很明显了. 其中发送的内容可以如下几种类型                                </p><ol><li>String </li><li>Blob</li><li>ArrayBuffer</li><li>ArrayBufferView</li></ol><p><a href="http://www.jb51.net/article/58281.htm" target="_blank" rel="external">什么是 ArrayBuffer</a><br><a href="http://javascript.ruanyifeng.com/stdlib/arraybuffer.html#toc0" target="_blank" rel="external">阮一峰:ArrayBuffer</a></p><p>所以你有可能写这样的代码<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">dataChannel.onmessage = <span class="function"><span class="keyword">function</span>(<span class="params">event</span>)</span>&#123;</div><div class="line"><span class="keyword">var</span> data = event.data;</div><div class="line"><span class="keyword">if</span>(data <span class="keyword">instanceof</span> Blob)&#123;</div><div class="line"></div><div class="line">&#125;<span class="keyword">else</span> <span class="keyword">if</span>(data <span class="keyword">instanceof</span> <span class="built_in">ArrayBuffer</span>)&#123;</div><div class="line"> </div><div class="line">&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p><h2 id="4-让我们来传点真正的东西吧"><a href="#4-让我们来传点真正的东西吧" class="headerlink" title="4. 让我们来传点真正的东西吧!"></a>4. 让我们来传点真正的东西吧!</h2><blockquote><p>首先要明确一点,  由于种种原因, 我们只能通过 base64 来传输数据 (是的, 这不是你家,这是浏览器,想在这里搞事情,就得听浏览器的,为什么?因为 js 和 底层网络协议有很多不可描述的约定, 所以大家商量就用可读字符串来传输数据吧    )</p></blockquote><p>由于上面的BUG, 噢, 不 特性,,, 我们的流程会是这样的</p><ol><li>先利用filereaderAPI 把文件 convert 为 buffer <code>reader.readAsArrayBuffer(file)</code></li><li>使用 <code>String.fromCharCode[int]</code> 返回对应整数编码的字符</li><li>使用 <code>btoa</code> 转换为base64编码</li><li>接收端拿到 base64 使用 <code>String.charCodeAt[string]</code> 返回 <code>Unicode</code> 编码</li><li>组装生成 BufferArray</li><li>最后变成 <code>new Blob(byteArrays, {type: contentType})</code></li></ol><p>然后下载<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">saveFile</span>(<span class="params">meta, data</span>) </span>&#123;</div><div class="line">  <span class="keyword">var</span> blob = base64ToBlob(data, meta.type);</div><div class="line">  <span class="keyword">var</span> link = <span class="built_in">document</span>.createElement(<span class="string">'a'</span>);</div><div class="line">  link.href = <span class="built_in">window</span>.URL.createObjectURL(blob);</div><div class="line">  link.download = meta.name;</div><div class="line">  link.click();</div><div class="line">&#125;</div></pre></td></tr></table></figure></p><h2 id="5-移动端的适配"><a href="#5-移动端的适配" class="headerlink" title="5.移动端的适配"></a>5.移动端的适配</h2><p> IOS 无法使用 不想适配了</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;1-获取用户媒体&quot;&gt;&lt;a href=&quot;#1-获取用户媒体&quot; class=&quot;headerlink&quot; title=&quot;1.获取用户媒体&quot;&gt;&lt;/a&gt;1.获取用户媒体&lt;/h2&gt; &lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;12&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;13&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;14&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;15&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;16&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;navigator.getUserMedia(&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &amp;#123; &lt;span class=&quot;attr&quot;&gt;video&lt;/span&gt;: &lt;span class=&quot;literal&quot;&gt;true&lt;/span&gt;, &lt;span class=&quot;attr&quot;&gt;audio&lt;/span&gt;: &lt;span class=&quot;literal&quot;&gt;false&lt;/span&gt; &amp;#125;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;params&quot;&gt;myStream&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    stream = myStream;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    yourVideo.src = &lt;span class=&quot;built_in&quot;&gt;window&lt;/span&gt;.URL.createObjectURL(stream);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (hasRTCPeerConnection()) &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;	   &lt;span class=&quot;comment&quot;&gt;//创建PeerConnection&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;      setupPeerConnection(stream);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#125; &lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt; &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;      alert(&lt;span class=&quot;string&quot;&gt;&quot;Sorry, your browser does not support WebRTC.&quot;&lt;/span&gt;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &amp;#125;, &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;params&quot;&gt;error&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;      &lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(error);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;);&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    
+    </summary>
+    
+      <category term="html5" scheme="http://leeleoo.github.io/notebook/categories/html5/"/>
+    
+    
+      <category term="-learn" scheme="http://leeleoo.github.io/notebook/tags/learn/"/>
+    
+  </entry>
+  
+</feed>
