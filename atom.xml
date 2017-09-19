@@ -6,7 +6,7 @@
   <link href="/notebook/atom.xml" rel="self"/>
   
   <link href="http://leeleoo.github.io/notebook/"/>
-  <updated>2017-09-19T04:07:23.000Z</updated>
+  <updated>2017-09-19T04:21:07.000Z</updated>
   <id>http://leeleoo.github.io/notebook/</id>
   
   <author>
@@ -18,19 +18,40 @@
   
   <entry>
     <title>testimage</title>
+    <link href="http://leeleoo.github.io/notebook/2017/09/19/testimage-1/"/>
+    <id>http://leeleoo.github.io/notebook/2017/09/19/testimage-1/</id>
+    <published>2017-09-19T04:18:52.000Z</published>
+    <updated>2017-09-19T04:21:07.000Z</updated>
+    
+    <content type="html"><![CDATA[<img src="/notebook/2017/09/19/testimage-1/background.jpg" alt="这是一个新的博客的图片的说明" title="这是一个新的博客的图片的说明">]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;img src=&quot;/notebook/2017/09/19/testimage-1/background.jpg&quot; alt=&quot;这是一个新的博客的图片的说明&quot; title=&quot;这是一个新的博客的图片的说明&quot;&gt;
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>testimage</title>
     <link href="http://leeleoo.github.io/notebook/2017/09/19/testimage/"/>
     <id>http://leeleoo.github.io/notebook/2017/09/19/testimage/</id>
     <published>2017-09-19T04:05:43.000Z</published>
-    <updated>2017-09-19T04:07:23.000Z</updated>
+    <updated>2017-09-19T04:08:43.000Z</updated>
     
-    <content type="html"><![CDATA[<p>图片测试</p><img src="/notebook/path/to/image" title="[300] [300] [title text [alt text]]">]]></content>
+    <content type="html"><![CDATA[<p>图片测试</p><img src="/notebook/path/to/image" width="300" height="300" title="[title text [alt text]]">]]></content>
     
     <summary type="html">
     
       
       
         &lt;p&gt;图片测试&lt;/p&gt;
-&lt;img src=&quot;/notebook/path/to/image&quot; title=&quot;[300] [300] [title text [alt text]]&quot;&gt;
+&lt;img src=&quot;/notebook/path/to/image&quot; width=&quot;300&quot; height=&quot;300&quot; title=&quot;[title text [alt text]]&quot;&gt;
 
       
     
