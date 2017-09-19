@@ -6,7 +6,7 @@
   <link href="/notebook/atom.xml" rel="self"/>
   
   <link href="http://leeleoo.github.io/notebook/"/>
-  <updated>2017-09-19T04:21:07.000Z</updated>
+  <updated>2017-09-19T06:49:42.000Z</updated>
   <id>http://leeleoo.github.io/notebook/</id>
   
   <author>
@@ -21,15 +21,15 @@
     <link href="http://leeleoo.github.io/notebook/2017/09/19/testimage-1/"/>
     <id>http://leeleoo.github.io/notebook/2017/09/19/testimage-1/</id>
     <published>2017-09-19T04:18:52.000Z</published>
-    <updated>2017-09-19T04:21:07.000Z</updated>
+    <updated>2017-09-19T06:49:42.000Z</updated>
     
-    <content type="html"><![CDATA[<img src="/notebook/2017/09/19/testimage-1/background.jpg" alt="这是一个新的博客的图片的说明" title="这是一个新的博客的图片的说明">]]></content>
+    <content type="html"><![CDATA[<img src="/notebook/2017/09/19/testimage-1/notebook/2017/09/19/testimage-1/background.jpg" alt="200 200 这是一个新的博客的图片的说明" title="200 200 这是一个新的博客的图片的说明"><img src="/notebook/2017/09/19/testimage-1/notebook/2017/09/19/testimage-1/background.jpg" width="200" height="200" title="away">]]></content>
     
     <summary type="html">
     
       
       
-        &lt;img src=&quot;/notebook/2017/09/19/testimage-1/background.jpg&quot; alt=&quot;这是一个新的博客的图片的说明&quot; title=&quot;这是一个新的博客的图片的说明&quot;&gt;
+        &lt;img src=&quot;/notebook/2017/09/19/testimage-1/notebook/2017/09/19/testimage-1/background.jpg&quot; alt=&quot;200 200 这是一个新的博客的图片的说明&quot; title=&quot;200 200 这是一个新
       
     
     </summary>
