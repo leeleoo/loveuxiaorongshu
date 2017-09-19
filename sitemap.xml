@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://leeleoo.github.io/notebook/2017/09/19/testimage/</loc>
+    
+    <lastmod>2017-09-19T04:07:23.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://leeleoo.github.io/notebook/2017/09/19/https-%E7%9A%84%E5%AE%89%E5%85%A8%E9%97%AE%E9%A2%98/</loc>
     
     <lastmod>2017-09-19T03:50:34.000Z</lastmod>
@@ -30,14 +37,7 @@
   </url>
   
   <url>
-    <loc>http://leeleoo.github.io/notebook/2017/09/19/reg/</loc>
-    
-    <lastmod>2017-09-19T02:32:38.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://leeleoo.github.io/notebook/2016/11/24/cocopods-%E6%8A%8A%E6%88%91%E5%9D%91/</loc>
+    <loc>http://leeleoo.github.io/notebook/2016/10/18/WebRTC/</loc>
     
     <lastmod>2017-09-19T02:32:38.000Z</lastmod>
     
@@ -52,6 +52,13 @@
   
   <url>
     <loc>http://leeleoo.github.io/notebook/2016/10/18/react%E6%8A%80%E6%9C%AF%E6%A0%88/</loc>
+    
+    <lastmod>2017-09-19T02:32:38.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://leeleoo.github.io/notebook/2017/09/19/reg/</loc>
     
     <lastmod>2017-09-19T02:32:38.000Z</lastmod>
     
@@ -86,7 +93,7 @@
   </url>
   
   <url>
-    <loc>http://leeleoo.github.io/notebook/2016/10/18/WebRTC/</loc>
+    <loc>http://leeleoo.github.io/notebook/2016/11/24/cocopods-%E6%8A%8A%E6%88%91%E5%9D%91/</loc>
     
     <lastmod>2017-09-19T02:32:38.000Z</lastmod>
     
