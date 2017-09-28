@@ -1,0 +1,34 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><title> webrtc-网络七层模型&&网络数据包 · snow</title><meta name="description" content="webrtc-网络七层模型&amp;&amp;网络数据包 - leeleo"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="icon" href="/notebook/favicon.png"><link rel="stylesheet" href="/notebook/css/apollo.css"><link rel="search" type="application/opensearchdescription+xml" href="http://leeleoo.github.io/notebook/atom.xml" title="snow"></head><body><div class="wrap"><header><a href="/notebook/" class="logo-link"><img src="/notebook/favicon.png" alt="logo"></a><ul class="nav nav-list"><li class="nav-list-item"><a href="/notebook/" target="_self" class="nav-list-link">BLOG</a></li><li class="nav-list-item"><a href="/notebook/archives/" target="_self" class="nav-list-link">ARCHIVE</a></li><li class="nav-list-item"><a href="http://weibo.com/sunchongsheng" target="_blank" class="nav-list-link">WEIBO</a></li><li class="nav-list-item"><a href="https://github.com/pinggod" target="_blank" class="nav-list-link">GITHUB</a></li><li class="nav-list-item"><a href="/notebook/atom.xml" target="_self" class="nav-list-link">RSS</a></li></ul></header><main class="container"><div class="post"><article class="post-block"><h1 class="post-title">webrtc-网络七层模型&&网络数据包</h1><div class="post-info">Sep 28, 2017</div><div class="post-content"><p><strong>1.七层模型</strong></p>
+<p>OSI 模型(Open System Interconnection model) 分为7层</p>
+<ul>
+<li>物理层：<br>物理层负责最后将信息编码成电流脉冲或其它信号用于网上传输；<br>eg：RJ45等将数据转化成0和1；</li>
+</ul>
+<ul>
+<li><p>数据链路层:<br>数据链路层通过物理网络链路􏰁供数据传输。</p>
+<blockquote>
+<p>不同的数据链路层定义了不同的网络和协 议特征,其中包括物理编址、网络拓扑结构、错误校验、数据帧序列以及流控;</p>
+</blockquote>
+</li>
+<li><p>网络层<br>网络层负责在源和终点之间建立连接;</p>
+</li>
+<li><p>传输层<br>传输层向高层􏰁提供可靠的端到端的网络数据流服务。</p>
+<blockquote>
+<p>可以理解为：每一个应用程序都会在网卡注册一个端口号，该层就是端口与端口的通信！常用的（TCP／IP）协议；</p>
+</blockquote>
+</li>
+<li><p>会话层<br>会话层建立、管理和终止表示层与实体之间的通信会话；</p>
+<blockquote>
+<p>建立一个连接（自动的手机信息、自动的网络寻址）;</p>
+</blockquote>
+</li>
+<li><p>表示层:<br>表示层􏰁供多种功能用于应用层数据编码和转化,以确保以一个系统应用层发送的信息 可以被另一个系统应用层识别;</p>
+<blockquote>
+<p>可以理解为：解决不同系统之间的通信，eg：Linux下的QQ和Windows下的QQ可以通信；</p>
+</blockquote>
+</li>
+</ul>
+<ul>
+<li>应用层:<br>OSI 的应用层协议包括文件的传输、访问及管理协议(FTAM) ,以及文件虚拟终端协议(VIP)和公用管理系统信息(CMIP)等;<br>规定数据的传输协议；</li>
+</ul>
+<p>常见的应用层协议<br><img src="/notebook/2017/09/28/webrtc-网络七层模型-网络数据包/notebook/2017/09/28/webrtc-网络七层模型-网络数据包/application.jpg" alt="200 200" title="200 200"></p>
+</div></article></div></main><footer><div class="paginator"><a href="/notebook/2017/09/25/AMP-MIP-为啥快/" class="next">NEXT</a></div><div class="copyright"><p>© 2015 - 2017 <a href="http://leeleoo.github.io/notebook">leeleo</a>, powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/pinggod/hexo-theme-apollo" target="_blank">hexo-theme-apollo</a>.</p></div></footer></div><script async src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" integrity="sha384-crwIf/BuaWM9rM65iM+dWFldgQ1Un8jWZMuh3puxb8TOY9+linwLoI7ZHZT+aekW" crossorigin="anonymous"></script><script>(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;e=o.createElement(i);r=o.getElementsByTagName(i)[0];e.src='//www.google-analytics.com/analytics.js';r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));ga('create',"UA-65933410-1",'auto');ga('send','pageview');</script></body></html>
